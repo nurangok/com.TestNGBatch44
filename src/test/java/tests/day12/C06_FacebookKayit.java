@@ -12,26 +12,49 @@ public class C06_FacebookKayit extends TestBase {
     //1- https://www.facebook.com adresine gidelim
     @Test
     public void test01() throws InterruptedException {
+        //1- https://www.facebook.com adresine gidelim
         driver.get("https://www.facebook.com");
+       Thread.sleep(1000);
+        driver.findElement(By.xpath("(//button[@value='1'])[3]")).click();
         //2- Yeni hesap olustur butonuna basalim
-        WebElement hesapEkle = driver.findElement(By.xpath("(//a[@role='button'])[2]"));
-        hesapEkle.click();
-        WebElement ilkTextBox=driver.findElement(By.xpath("//input[@name='firstname']"));
+        driver.findElement(By.xpath("//a[@class='_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")).click();
+
+        //3- Ad, soyad, mail ve sifre kutularina deger yazalim ve kaydol tusuna basalim
+        WebElement isimKutusu= driver.findElement(By.xpath("//input[@name='firstname']"));
+
+
         Actions actions=new Actions(driver);
-        actions.click(ilkTextBox).
-                keyDown(Keys.SHIFT).sendKeys("k").keyUp(Keys.SHIFT).sendKeys("utlu").sendKeys(Keys.TAB).
-                sendKeys("Murat").sendKeys(Keys.TAB).
-                sendKeys("kutlumurat").keyDown(Keys.SHIFT).sendKeys("2").keyUp(Keys.SHIFT).sendKeys("gmail.com").sendKeys(Keys.TAB).
-                sendKeys("kutlumurat").keyDown(Keys.SHIFT).sendKeys("2").keyUp(Keys.SHIFT).sendKeys("gmail.com").sendKeys(Keys.TAB).
-                sendKeys("Mhju?123Mki").sendKeys(Keys.TAB).sendKeys(Keys.TAB).
-                sendKeys(Keys.ARROW_DOWN).sendKeys("Jan").sendKeys(Keys.SPACE).sendKeys(Keys.TAB).
-                sendKeys(Keys.ARROW_DOWN).sendKeys("11").sendKeys(Keys.SPACE).sendKeys(Keys.TAB).
-                sendKeys(Keys.ARROW_DOWN).sendKeys("1999").sendKeys(Keys.SPACE).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
-                sendKeys(Keys.ARROW_RIGHT).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
-                sendKeys(Keys.ENTER).
-                perform();
-        Thread.sleep(80000);
+
+        actions.click(isimKutusu)
+                .sendKeys("Mehmet")
+                .sendKeys(Keys.TAB)
+                .sendKeys("Bulutluoz")
+                .sendKeys(Keys.TAB)
+                .sendKeys("asdf@gmail.com")
+                .sendKeys(Keys.TAB)
+                .sendKeys("asdf@gmail.com")
+                .sendKeys(Keys.TAB)
+                .sendKeys("12qwasQ.")
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys("Jan")
+                .sendKeys(Keys.TAB)
+                .sendKeys("15")
+                .sendKeys(Keys.TAB)
+                .sendKeys("1972")
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.ENTER)
+                .perform();
+
+        Thread.sleep(5000);
+
+
+        //4- Kaydol tusuna basalim
     }
-    //3- Ad, soyad, mail ve sifre kutularina deger yazalim ve kaydol tusuna basalim
-    //4- Kaydol tusuna basalim
 }

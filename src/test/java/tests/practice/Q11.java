@@ -30,7 +30,7 @@ Cucumber'daki Scenario Outline ile ayni isleve sahiptir
         }
         // https://www.gittigidiyor.com/ adresine gidiniz
         // java, javascript ve python kelimelerini arayiniz
-        @Test (dataProvider = "aranacakKelimeler")  //veri aldigimiz method ismi belirtilirse annotaion in oldugu yerde belirtmeye gerek yoktur
+        @Test (dataProvider = "aranacakKelimeler")  //veri aldigimiz method ismi belirtilirse annotation in oldugu yerde belirtmeye gerek yoktur
         public void gittiGidiyorTest(String aranacakKelime){
             driver.get("https://www.gittigidiyor.com/");
             driver.findElement(By.xpath("//input[@name ='k']")).sendKeys(aranacakKelime +Keys.ENTER);

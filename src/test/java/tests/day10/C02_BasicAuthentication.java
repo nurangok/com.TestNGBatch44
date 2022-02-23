@@ -1,9 +1,12 @@
 package tests.day10;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -40,7 +43,15 @@ public class C02_BasicAuthentication {
         // yapabilecegimiz bilgisini de vermek zorundadir.
         // bi de bize tarif edilen yontem ve bize verilen bilgileri birebir uygulayarak
         // istedigimiz webservise giris saglayabiliriz
-        driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
         //4- Basarili sekilde sayfaya girildigini dogrulayin
+        driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+        WebElement congratMesajElementi=driver.findElement(By.tagName("p"));
+
+        Assert.assertTrue(congratMesajElementi.isDisplayed());
+    }
+
+    @AfterClass
+    public void teardown(){
+        driver.close();
     }
 }

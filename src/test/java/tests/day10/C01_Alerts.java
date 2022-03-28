@@ -64,7 +64,7 @@ public class C01_Alerts {
         driver.switchTo().alert().accept();
         sonucYazisiElementi=driver.findElement(By.xpath("//p[@id='result']"));
         String actualSonucYazisi= sonucYazisiElementi.getText();
-        String yazdigimizIsim="Yildiz";
+        String yazdigimizIsim="Nuran";
         Thread.sleep(3000);
         Assert.assertTrue(actualSonucYazisi.contains(yazdigimizIsim));
     }

@@ -10,13 +10,25 @@ public class C01_TestBaseKullanim  {
     //projeniz iceisinde herhangi bir classtan obje oluturablr ve obje sayesnde ait oldugu
     //classtaki tum variable ve metodlara access modifier izin verdgi surece ulasablrim
     public void tets01(){
+        // projeniz icerisindeki herhangi bir class'dan obje olusturabilir ve
+        // o obje sayesinde ait oldugu class'daki tum variable ve method'lara
+        // (access modfier izin verdigi surece) ulasabilirim
         C01_Alerts obj=new C01_Alerts();
-        //eger proje kapsamnda bir classtan obje olsutuurlmasini engellemek isterseniz
-        //1-o classn comstructor ini private yapablrz
-        //2-class in kendisini abstract yapabl;rz
-        //1.method cok tercih edilmez sinirli syida kullanimi vardr
-        //2.method u kullanabilirz boylece o classtaki abstract olmayan methodlari override etmek
-        //mecburiyeti olmadan kullanabilirz ama obje olusturulmaz
+
+        // eger proje kapsaminda bir class'dan obje olusturulmasini engellemek isterseniz
+        // 1- o class'in constructor'ini private yapabiliriz
+        // 2- class'in kendisini abstract yapabiliriz
+        // 1.method cok tercih edilmez cunku OOP consept'e uymaz(cok sinirli sayida kullanimi vardir)
+        // 2.method'u kullanabiliriz, boylece o class'daki abstract olmayan (concrete)
+        // method'lari override etmek mecburiyeti olmadan kullanabiliriz
+        // ama obje olusturamayiz
+
+        // ornegin biz testBase class'ini abstract yaptigimizdan obje olusturamayiz
+        // ama child class'lardan TestrBase'deki setUp ve teardown method'larini kullanabiliriz
+
+        // TestBase obj1=new TestBase();
+
+
 
 
     }

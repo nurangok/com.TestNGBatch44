@@ -59,7 +59,7 @@ public class C01_Alerts {
         //      ○ 3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin,
         driver.findElement(By.xpath("//button[text()='Click for JS Prompt']")).click();
         Thread.sleep(3000);
-        driver.switchTo().alert().sendKeys("Yildiz");
+        driver.switchTo().alert().sendKeys("Nuran");
         //      OK butonuna     tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
         driver.switchTo().alert().accept();
         sonucYazisiElementi=driver.findElement(By.xpath("//p[@id='result']"));

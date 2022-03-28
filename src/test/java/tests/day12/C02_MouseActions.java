@@ -16,7 +16,7 @@ public class C02_MouseActions extends TestBase {
 // ve new list sayfasinin acildigini test edin
 
     @Test
-    public void amaonList() throws InterruptedException {
+    public void amazonList() throws InterruptedException {
         driver.get("https://www.amazon.com");
         Actions actions = new Actions(driver);
         WebElement helloElement = driver.findElement(By.xpath("(//a[@class='nav-a nav-a-2   nav-progressive-attribute'])[1]"));
